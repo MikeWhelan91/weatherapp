@@ -1,0 +1,83 @@
+//i used this to style the pages overall
+
+.main-content {
+    height: 100%;
+  }
+
+.settings{
+    background: 
+ 
+    linear-gradient(
+      rgba(34, 118, 121, 0.9), 
+      rgb(10, 59, 83)
+    ),
+
+    url('../assets/background1.jpg') ;
+    
+}
+
+.home{
+    background: 
+ 
+    linear-gradient(
+      rgba(126, 206, 209,0.8), 
+      rgba(23, 128, 181,1)
+    ),
+
+    url('../assets/background1.jpg') ;
+    
+}
+
+.about{
+    background: 
+ 
+    linear-gradient(
+      rgba(126, 206, 209,0.8), 
+      rgba(23, 128, 181,1)
+    ),
+
+    url('../assets/background1.jpg') ;
+    
+}
+
+
+
+.toolbar-title{
+    text-align: center;
+}
+
+.tabs-md .tab-button-icon{
+    color:rgb(255, 255, 255);
+}
+.infolist{
+    border-style: round;
+    border-radius: 100px;
+}
+.temp{
+
+    font-size:100px;
+    text-align: center;
+    font-weight: normal;
+    color :#fff;
+}
+
+.location,.icon, .desc{
+    text-align: center;
+    
+}
+
+.icon img{
+    width: 100px;
+}
+.location{
+    color :#fff;
+   font-size:40px;
+}
+
+.desc{
+    color :#fff;
+    font-size:20px;
+}
+
+
+

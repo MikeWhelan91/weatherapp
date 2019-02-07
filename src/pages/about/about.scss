@@ -1,0 +1,33 @@
+page-about {
+//basic css for styling the page
+    .error{
+        color: #ff0000;
+        font-size: 12px;
+      }
+
+      ion-input{
+        //placeholder colour changed in the variables.scss file
+        font-size: 20px;
+    }
+
+
+
+    h2, h5{
+        color: color($colors,light);
+        text-align: center;
+    }
+
+    .larger{
+        font-size: 100px;
+        color: color($colors, light);
+        padding-top: 10px;
+    }
+
+    .result{
+        color: color($colors, light);
+    }
+
+        .main-content{
+            padding-top: 20px;
+        }
+}

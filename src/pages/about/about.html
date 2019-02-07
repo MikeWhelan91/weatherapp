@@ -1,0 +1,90 @@
+<ion-header>
+
+</ion-header>
+  
+<ion-content padding class="about">
+    <!-- the swipe function allows you to swipe left or right between pages-->
+    <div class="main-content" (swipe)="swipe($event)">
+
+  <!-- This is the form where you put your email in. the login function checks for valid email 
+    and if it is valid bring up the pop up alers-->
+  <form padding [formGroup]="loginForm" (submit)="login(); " novalidate>
+
+    <h2>Sign up with your email for custom weather alerts!</h2>
+    <ion-item>
+      <ion-input [(ngModel)]="email" formControlName="email" type="text" placeholder="Enter your Email here!"
+        clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorEmail" class="error"> {{messageEmail}}</h6>
+    <br>
+    <br>
+
+    <button ion-button block outline color="light" class="login-button">Sign up!</button>
+
+
+  </form>
+
+
+  <h2>Click below to get your exact location!</h2>
+
+    <!-- this is the cordova plugin for peoposition-->
+    <ion-row *ngIf="!geoposition">
+      <ion-col text-center>
+        <!-- shows the icon if there's no geoposition information so far -->
+        <ion-icon class="larger" ios="ios-compass-outline" md="md-compass"> </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!geoposition">
+      <ion-col text-center>
+        <button ion-button round outline color="light" (click)="getGeolocation()">Get Geolocation</button>
+      </ion-col>
+    </ion-row>
+    <!-- if there is geoposition information found it will display it -->
+    <ion-row *ngIf="geoposition">
+      <ion-col text-center>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="result">Results</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item>
+                Accuracy: {{geoposition.coords.accuracy}}
+              </ion-item>
+              <ion-item>
+                Altitude: {{geoposition.coords.altitude}}
+              </ion-item>
+              <ion-item>
+                Altitude Accuracy: {{geoposition.coords.altitudeAccuracy}}
+              </ion-item>
+              <ion-item>
+                Heading: {{geoposition.coords.heading}}
+              </ion-item>
+              <ion-item>
+                Latitude: {{geoposition.coords.latitude}}
+              </ion-item>
+              <ion-item>
+                Longitude: {{geoposition.coords.longitude}}
+              </ion-item>
+              <ion-item>
+                Speed: {{geoposition.coords.speed}}
+              </ion-item>
+              <ion-item>
+                Timestamp: {{geoposition.timestamp }}
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+  </div>
+  
+
+</ion-content>
+

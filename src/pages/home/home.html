@@ -1,0 +1,58 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content padding class="home">
+  <!-- the event to swipe left and right-->
+  <div class="main-content" (swipe)="swipe($event)">
+    <ion-grid *ngIf="weather">
+      <ion-row>
+        <ion-col width-50 offset-25>
+          <!-- this is the where the weather information is displayed (an absolute pain)-->
+          <h2 class="location"> {{weather.name}}, {{weather.sys.country}}</h2>
+          <div class="icon"><img src="https://openweathermap.org/img/w/{{weather.weather[0].icon }}.png" alt=""></div>
+          <h4 class="desc">{{weather.weather[0].description | uppercase}}</h4>
+          <h1 class="temp">{{weather.main.temp | number:'1.0-1'}} &deg;</h1>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-col width-100>
+        <ion-list class="infolist">
+          <!-- list section where more information is read and displayed -->
+          <ion-item>
+            <ion-icon ios="ios-thermometer-outline" md="md-thermometer" item-start color="light"></ion-icon>
+            <strong>Temperature:</strong> {{weather.main.temp | number:'1.0-1'}} &deg;C
+          </ion-item>
+
+          <ion-item>
+            <ion-icon ios="ios-water-outline" md="md-water" item-start color="light"></ion-icon>
+            <strong>Humidity: </strong> {{weather.main.humidity}} %
+          </ion-item>
+
+          <ion-item>
+            <ion-icon ios="ios-cloud-download-outline" md="md-cloud-download" item-start color="light"></ion-icon>
+            <strong>Pressure:</strong> {{weather.main.pressure/1.33322387415 |number : '1.2-2'}} mmHg
+          </ion-item>
+
+          <ion-item>
+            <ion-icon ios="ios-leaf-outline" md="md-leaf" item-start color="light"></ion-icon>
+            <strong>Wind Speed: </strong>{{weather.wind.speed}} m/s
+          </ion-item>
+          <ion-item>
+            <ion-icon ios="ios-sunny-outline" md="md-sunny" item-start color="light"></ion-icon>
+            <strong>Sunrise: </strong>{{weather.sys.sunrise* 1000 | date: "h:mm a"}}
+          </ion-item>
+          <ion-item>
+            <ion-icon ios="ios-moon-outline" md="md-moon" item-start color="light"></ion-icon>
+
+            <strong>Sunset: </strong>{{weather.sys.sunset* 1000 | date: "h:mm a"}}
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+
+
+    </ion-grid>
+  </div>
+</ion-content>
