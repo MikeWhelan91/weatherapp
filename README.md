@@ -1,5 +1,5 @@
-# weatherapp
-<h2>First stab at ionic<h2>
+
+# First time using ionic
 <br>
 <img src="img/weatherapp.jpg" width="200">
 <h2>Lets you update the location, uses the OpenWeather api<h2>
